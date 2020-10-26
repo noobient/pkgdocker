@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -eu
+
+if [ $# -ne 2 ]
+then
+    echo "Error! Please specify package and OS."
+    exit 1
+fi
+
+. "$2/package.conf"
+
+mkdir -p pkg
+
+cp -f common/build.sh "$2/"
+docker build --network=host --tag "pkgdocker.$1.$2:${PKG_VER}-${PKG_BUILD}" "$2"
+docker run --network=host --rm --mount type=bind,source="$(pwd)"/pkg,target=/pkgdocker/pkg "pkgdocker.$1.$2:${PKG_VER}-${PKG_BUILD}"
