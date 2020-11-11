@@ -19,3 +19,6 @@ RUN rvm use 2.7 --default
 
 # FPM
 RUN gem install --no-document fpm
+
+# regular user
+RUN useradd --groups wheel --create-home --user-group pkgdocker
