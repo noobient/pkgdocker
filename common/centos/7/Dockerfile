@@ -7,7 +7,7 @@ SHELL [ "/bin/bash", "-l", "-c" ]
 RUN yum update -y
 
 # Generic RPM stuff
-RUN yum -y install gcc rpm-build rpm-devel rpmlint make python bash coreutils diffutils patch rpmdevtools
+RUN yum -y install gcc rpm-build rpm-devel rpmlint make python bash coreutils diffutils patch rpmdevtools sudo
 
 # Ruby
 RUN yum -y install which
