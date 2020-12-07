@@ -2,16 +2,30 @@
 
 set -eu
 
-if [ $# -ne 2 ]
-then
-    echo "Error! Please specify package and OS."
-    exit 1
-fi
+export PKG_NAME=$1
 
-. "$2/package.conf"
+. "spec/${PKG_NAME}/package.conf"
 
 mkdir -p pkg
 
-cp -f common/build.sh "$2/"
-docker build --network=host --tag "pkgdocker.$1.$2:${PKG_VER}-${PKG_BUILD}" "$2"
-docker run --network=host --rm --mount type=bind,source="$(pwd)"/pkg,target=/pkgdocker/pkg "pkgdocker.$1.$2:${PKG_VER}-${PKG_BUILD}"
+pushd "spec/${PKG_NAME}"
+
+mkdir -p data
+\cp -f "package.conf" "data/"
+\cp -f "control" "data/"
+
+cat "../../common/ubuntu/steps-header.sh" > "data/steps.sh"
+cat "steps.sh" >> "data/steps.sh"
+cat "../../common/ubuntu/steps-footer.sh" >> "data/steps.sh"
+chmod 0755 "data/steps.sh"
+
+# for whatever reason Docker seems to send *all* data in all the subdirs to the daemon, not just the one included in the ADD property
+# so we need to restrict the build to the specific app folder, that saves us a lot of time and pointless file movements
+#docker build --network=host --tag "pkgdocker.${PKG_NAME}:${PKG_VER}-${PKG_BUILD}" --build-arg DATA_DIR="spec/${PKG_NAME}/${PKG_VER}/data" .
+
+#cp "../../../Dockerfile" .
+docker build --network=host --tag "pkgdocker.${PKG_NAME}:${PKG_VER}-${PKG_BUILD}" .
+
+popd
+
+docker run --network=host --rm --mount type=bind,source="$(pwd)"/pkg,target=/pkg "pkgdocker.${PKG_NAME}:${PKG_VER}-${PKG_BUILD}"
