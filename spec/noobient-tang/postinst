@@ -1,0 +1,2 @@
+/bin/systemctl daemon-reload
+mkdir -p /var/db/tang

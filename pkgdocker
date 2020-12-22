@@ -13,6 +13,10 @@ pushd "spec/${PKG_NAME}"
 mkdir -p data
 \cp -f "package.conf" "data/"
 \cp -f "control" "data/"
+if [ -f "postinst" ]
+then
+    \cp -f "postinst" "data/"
+fi
 
 cat "../../common/ubuntu/steps-header.sh" > "data/steps.sh"
 cat "steps.sh" >> "data/steps.sh"

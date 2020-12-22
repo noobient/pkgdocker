@@ -1,0 +1,32 @@
+[binaries]
+c = '/usr/bin/mipsel-linux-gnu-gcc'
+cpp = '/usr/bin/mipsel-linux-gnu-g++'
+ar = '/usr/bin/mipsel-linux-gnu-ar'
+strip = '/usr/bin/mipsel-linux-gnu-strip'
+pkgconfig = 'pkg-config'
+exe_wrapper = '/usr/local/bin/qemu-mipsel-wrapper'
+
+[properties]
+has_function_printf = true
+needs_exe_wrapper = true
+c_arch = 'mipsel'
+cc_arch = 'mipsel'
+bits = 32
+
+[build_machine]
+system = 'linux'
+cpu_family = 'x86_64'
+endian = 'little'
+cpu = 'x86_64'
+
+[host_machine]
+system = 'linux'
+cpu_family = 'x86_64'
+endian = 'little'
+cpu = 'x86_64'
+
+[target_machine]
+system = 'linux'
+cpu_family = 'mips'
+endian = 'little'
+cpu = 'mips'
