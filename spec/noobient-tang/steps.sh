@@ -3,14 +3,14 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # old releases didn't use ninja/meson
-#wget https://github.com/latchset/tang/archive/v${PKG_VER}.tar.gz
-#tar xf v${PKG_VER}.tar.gz
-#cd tang-${PKG_VER}
+wget https://github.com/latchset/tang/archive/v${PKG_VER}.tar.gz
+tar xf v${PKG_VER}.tar.gz
+cd tang-${PKG_VER}
 
-GIT_REV=7510661
-git clone https://github.com/latchset/tang.git
-cd tang
-git checkout ${GIT_REV}
+#GIT_REV=7510661
+#git clone https://github.com/latchset/tang.git
+#cd tang
+#git checkout ${GIT_REV}
 
 # TODO meson bug?
 ln -s /usr/local/include/http_parser.h /usr/include/http_parser.h
