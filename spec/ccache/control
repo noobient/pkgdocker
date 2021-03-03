@@ -1,0 +1,9 @@
+Package: ${PKG_NAME}
+Version: ${PKG_VER}-${PKG_BUILD}
+Section: base
+Priority: optional
+Architecture: amd64
+Depends: libc6, zlib1g, libzstd1
+Suggests: distcc
+Maintainer: Viktor Berke <github.bviktor@outlook.com>
+Description: Compiler cache for fast recompilation of C/C++ code

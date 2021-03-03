@@ -1,0 +1,11 @@
+Package: ${PKG_NAME}
+Version: ${PKG_VER}-${PKG_BUILD}
+Section: base
+Priority: optional
+Architecture: amd64
+Depends: libc6, libgcc1, zlib1g
+#Provides: libzstd1, libzstd-dev
+#Conflicts: libzstd1, libzstd-dev
+#Replaces: libzstd1, libzstd-dev
+Maintainer: Viktor Berke <github.bviktor@outlook.com>
+Description: Fast real-time compression algorithm
