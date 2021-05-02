@@ -6,3 +6,5 @@ RUN apt -y install --no-install-recommends gettext-base
 RUN apt -y install --no-install-recommends dpkg-dev
 # common stuff
 RUN apt -y install wget git
+# regular user
+RUN useradd --groups sudo --create-home --user-group pkgdocker

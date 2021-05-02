@@ -7,7 +7,7 @@ then
     chmod 0755 "${DEST_DIR}/DEBIAN/postinst"
 fi
 
-sudo chown -R root:root "${DEST_DIR}"
+chown -R root:root "${DEST_DIR}"
 dpkg-deb --build "${DEST_DIR}"
 
 mv "${ROOT_DIR}/${PKG_NAME}_${PKG_VER}-${PKG_BUILD}.deb" /pkg/
