@@ -1,0 +1,8 @@
+Package: ${PKG_NAME}
+Version: ${PKG_VER}-${PKG_BUILD}
+Section: base
+Priority: optional
+Architecture: amd64
+Depends: libc6 (>= 2.31), python3 (>= 3.8.2), cython3 (>= 0.29.14)
+Maintainer: Viktor Berke <github.bviktor@outlook.com>
+Description: A library to handle Apple Property List format in binary or XML
