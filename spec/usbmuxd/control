@@ -1,0 +1,8 @@
+Package: ${PKG_NAME}
+Version: ${PKG_VER}-${PKG_BUILD}
+Section: base
+Priority: optional
+Architecture: amd64
+Depends: libc6 (>= 2.31), libusb-1.0-0 (>= 1.0.23), libplist (>= 2.2.0), libusbmuxd (>= 2.0.2), libimobiledevice (>= 1.3.0), systemd (>= 245.4)
+Maintainer: Viktor Berke <github.bviktor@outlook.com>
+Description: A socket daemon to multiplex connections from and to iOS devices
