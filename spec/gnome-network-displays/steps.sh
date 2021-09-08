@@ -1,6 +1,3 @@
-sed -i.orig 's/^# deb-src /deb-src /' /etc/apt/sources.list
-apt update
-
 wget https://gitlab.gnome.org/GNOME/gnome-network-displays/-/archive/v${PKG_VER}/gnome-network-displays-v${PKG_VER}.tar.gz
 tar xf gnome-network-displays-v${PKG_VER}.tar.gz
 cd gnome-network-displays-v${PKG_VER}
