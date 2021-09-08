@@ -1,0 +1,14 @@
+diff -ruN wpa-2.9.orig/wpa_supplicant/p2p_supplicant.c wpa-2.9/wpa_supplicant/p2p_supplicant.c
+--- wpa-2.9.orig/wpa_supplicant/p2p_supplicant.c	2019-08-07 15:25:25.000000000 +0200
++++ wpa-2.9/wpa_supplicant/p2p_supplicant.c	2021-09-08 16:16:02.484341672 +0200
+@@ -3804,6 +3804,10 @@
+ 			  wpa_s->ifname);
+ 	if (os_snprintf_error(sizeof(ifname), ret))
+ 		return -1;
++	/* Cut length at the maximum size. Note that we don't need to ensure
++	 * collision free names here as the created interface is not a netdev.
++	 */
++	ifname[IFNAMSIZ-1] = '\0';
+ 	force_name[0] = '\0';
+ 	wpa_s->pending_interface_type = WPA_IF_P2P_DEVICE;
+ 	ret = wpa_drv_if_add(wpa_s, WPA_IF_P2P_DEVICE, ifname, NULL, NULL,
