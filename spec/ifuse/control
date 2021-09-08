@@ -1,0 +1,8 @@
+Package: ${PKG_NAME}
+Version: ${PKG_VER}-${PKG_BUILD}
+Section: base
+Priority: optional
+Architecture: amd64
+Depends: libc6 (>= 2.31), libplist3 (>= 2.2.0), libimobiledevice6 (>= 1.3.0), libfuse2 (>= 2.9.9)
+Maintainer: Viktor Berke <github.bviktor@outlook.com>
+Description: A fuse filesystem to access the contents of iOS devices

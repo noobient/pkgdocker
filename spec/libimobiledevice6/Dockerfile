@@ -7,5 +7,7 @@ RUN apt -y install --no-install-recommends pkg-config
 # this package only searches for 'cython' and 'python' executables
 #RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 #RUN update-alternatives --install /usr/bin/cython cython /usr/bin/cython3 10
+# only for git build
+RUN apt -y install libtool
 
 CMD /home/pkgdocker/steps.sh

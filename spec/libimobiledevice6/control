@@ -3,6 +3,6 @@ Version: ${PKG_VER}-${PKG_BUILD}
 Section: base
 Priority: optional
 Architecture: amd64
-Depends: libc6 (>= 2.31), python3 (>= 3.8.2), cython3 (>= 0.29.14), libplist (>= 2.2.0), libusbmuxd (>= 2.0.2), libssl1.1 (>= 1.1.1f)
+Depends: libc6 (>= 2.31), python3 (>= 3.8.2), cython3 (>= 0.29.14), libplist3 (>= 2.2.0), libusbmuxd6 (>= 2.0.2), libssl1.1 (>= 1.1.1f)
 Maintainer: Viktor Berke <github.bviktor@outlook.com>
 Description: A cross-platform protocol library to communicate with iOS devices
