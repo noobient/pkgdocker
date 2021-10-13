@@ -3,6 +3,6 @@ Version: ${PKG_VER}-${PKG_BUILD}
 Section: base
 Priority: optional
 Architecture: amd64
-Depends: libc6 (>= 2.27), tpm2-tools (>= 4.1.1), jose (>= 10-2build1), libjansson4 (>= 2.11), libpwquality-tools (>= 1.4.0), auditd (>= 1:2.8.2), udisks2 (>= 2.7.6), libglib2.0-0 (>= 2.56.4), tang (>= 7), curl (>= 7.58.0), jq (>= 1.5), cryptsetup-bin (>= 2:2.0.2), bash-completion (>=2.11), luksmeta (>= 9-3), systemd (>=245), auditd (>= 1:2.8.2), udisks2 (>= 2.7.6), libglib2.0-0 (>= 2.56.4), initramfs-tools (>=0.136), tpm2-tools (>=4.1.1), socat (>=1.7.3.3)
+Depends: libc6 (>= 2.27), tpm2-tools (>= 4.1.1), jose (>= 10-2build1), libjansson4 (>= 2.11), libpwquality-tools (>= 1.4.0), auditd (>= 1:2.8.2), udisks2 (>= 2.7.6), libglib2.0-0 (>= 2.56.4), tang (>= 7), curl (>= 7.58.0), jq (>= 1.5), cryptsetup-bin (>= 2:2.0.2), bash-completion (>=2.11), luksmeta (>= 9-3), systemd (>=245), auditd (>= 1:2.8.2), udisks2 (>= 2.7.6), libglib2.0-0 (>= 2.56.4), initramfs-tools (>=0.136), tpm2-tools (>=4.1.1), socat (>=1.7.3.3), cracklib-runtime (>=2.9.6)
 Maintainer: Viktor Berke <github.bviktor@outlook.com>
 Description: Automated Encryption Framework
