@@ -11,7 +11,13 @@ RUN yum -y install gcc rpm-build rpm-devel rpmlint make python bash coreutils di
 
 # Ruby
 RUN yum -y install which git
-RUN gpg2 --keyserver hkp://pgp.mit.edu --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+
+# Apprently GPG infrastructure is hot garbage:
+# https://frank.sauerburger.io/2020/01/15/openpgp-keyservers.html
+#RUN gpg2 --keyserver hkp://pgp.mit.edu --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+# So fetch the keys directly from RVM
+RUN for key in 'mpapis' 'pkuczynski'; do curl -sSL "https://rvm.io/${key}.asc" | gpg --import -; done
+
 RUN curl -L get.rvm.io | bash -s stable
 RUN rvm requirements run
 RUN rvm install 2.7
